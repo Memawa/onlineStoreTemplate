@@ -7,8 +7,8 @@ Fill the document out following the guidelines listed in each section. Maintain 
 ## Group Members
 
 * [Mekhi Washington](emailto:mwashi35@uncc.edu)
-* [Name](mmailto:email@uncc.edu)
-* [Name](mmailto:email@uncc.edu)
+* [Adrian Dominguez-Hernandez](emailto:adoming8@uncc.edu)
+* [Derin Tekin](mmailto:dtekin1@uncc.edu)
 * [Name](mmailto:email@uncc.edu)
 
 ## Revisions
@@ -30,7 +30,7 @@ When a change is made to the document, a new revision should be created. The rev
 
 ## Introduction
 
-In this section, you should give a brief overview of what your project will be. Describe the software system you are building and what problems it solves. You should also give a short description of the stakeholders (users of the system) and what their needs are. There is no set formatting requirement, but you should maintain a consistent structure across future sections. Not all members must contribute to this section.
+Our project is going to be an online music store. Our software will display music albums the user can buy and when they click/purchase on the album the software will display popular artists from that category and merch they might want to buy. They will be hardcoded. 
 
 
 
@@ -38,18 +38,18 @@ In this section, you should give a brief overview of what your project will be. 
 
 Each group member must supply at least three functional requirements for the project. Each requirement should be written in the following format:
 
-* **ID:** A unique identifier for the requirement. This should be a number that is unique across the entire document (something like REQ-1, REQ-2, etc. but be sure to replace the word `ID` with the unique identifier).
-  * **Description:** A short description of the requirement. This should be a single sentence that describes the requirement. Do not replace the word `Description` with the actual description. Put the description in the space where these instructions are written. Maintain that practice for all future sections.
-  * **Type:** The type of requirement. Should be either `Functional` or `Non-Functional`.
-  * **Priority:** The priority of the requirement. This should be a number between 1 and 5, with 1 being the highest priority and 5 being the lowest priority.
-  * **Rationale:** A short description of why the requirement is important. This should be a single sentence that describes why the requirement is important.
-  * **Testing:** A short description of how the requirement can be tested. This should be a single sentence that describes how the requirement can be tested.
-* **ID:** A unique identifier for the requirement. This should be a number that is unique across the entire document (something like REQ-1, REQ-2, etc. but be sure to replace the word `ID` with the unique identifier).
-  * **Description:** A short description of the requirement. This should be a single sentence that describes the requirement.
-  * **Type:** The type of requirement. Should be either `Functional` or `Non-Functional`.
-  * **Priority:** The priority of the requirement. This should be a number between 1 and 5, with 1 being the highest priority and 5 being the lowest priority.
-  * **Rationale:** A short description of why the requirement is important. This should be a single sentence that describes why the requirement is important.
-  * **Testing:** A short description of how the requirement can be tested. This should be a single sentence that describes how the requirement can be tested.
+* **ID:**Database1.
+  * **Description:** Hardcode the database 
+  * **Type:** Functional
+  * **Priority:** 1
+  * **Rationale:** it is important because the code will not properly funciton and the main function of the store wouldn't run
+  * **Testing:** There isn't much testing in the database 
+* **ID:**Main1
+  * **Description:** The main file will have all the methods used to grab the genres, artists, merch, and prices.
+  * **Type:** Functional
+  * **Priority:** 1
+  * **Rationale:** Without this file we will just have a database with no use. this file will put those values to use
+  * **Testing:** making sure the main file is pulling the right values from the database. And displays them right.
 
   Function 1 
     Description- Being able to buy and sell music
@@ -77,7 +77,7 @@ Each group member must supply at least three functional requirements for the pro
 
 ## Constraints
 
-In this section, you should list any constraints that you have for the project. Each group member must supply at least two constraints. These can be constraints on the project itself, the software system, or the stakeholders. Constraints can be anything that limits the scope of the project. For example, that this project's template code is written using Flask and Python constitutes a constraint on the backend of the project. Constraints can also be things like the required timeline of the project. Be creative.
+We can only commit/make changes to a file if everyone is in 100% agreeance. Espicially the main file.
 
   -Having 5 weeks to have this project done.
   -Not enough funding
@@ -85,27 +85,73 @@ In this section, you should list any constraints that you have for the project. 
 
 ## Use Cases
 
-In this section, you should list use cases for the project. Use cases are a thorough description of how the system will be used. Each group member must supply at least two use cases. Each use case should be written in the following format:
 
-* **ID:** A unique identifier for the use case. This should be a number that is unique across the entire document (something like UC-1, UC-2, etc. but be sure to replace the word `ID` with the unique identifier).
-  * **Description:** A description of the use case that gives the user a high-level overview of how the system is interacted with.
-  * **Actors:** A list of the actors that are involved in the use case. Only include the actors that are directly involved. Actors are the people or things that interact with the system. For example, when ordering at a fast food restaurant, one might have the following actors: the customer, the cashier, and the cook. But only the customer and the cashier are directly involved in the use case of ordering food. The cook is not directly involved in the use case of ordering food.
-  * **Preconditions:** A list of the preconditions for the use case. This should be a list of the preconditions for the use case, which are the conditions that must be met before the use case can be executed. Continuing with the restaurant example, the customer must have money in their wallet and the cashier must be logged in to the system before the use case of ordering food can be executed.
-  * **Postconditions:** A list of the postconditions for the use case. This should be a list of the postconditions for the use case, which are the conditions that must be met after the use case has been executed. Continuing with the restaurant example, the customer must have their food and the cashier must have the customer's money after the use case of ordering food has been executed.
+  * **UC-1:**
+  * **Actors:** User
+  * **Preconditions:** User has logged onto the the system. 
+  * **Postconditions:** purchasing albums 
+  * **Description:** Users can browse the website and purchase individual albums.
+  
+* **UC-2:**
+* **Actors:** User
+  * **Preconditions:** The user has selected an album.
+  * **Postconditions:** The user gets recommendations based on their selection. 
+  * **Description:** The system recommends albums similar to the one the user picked based on the artist or the genre. 
+
+* **UC-3:** 
+  * **Actors:** User
+  * **Preconditions:** the user has logged into the system. 
+  * **Description:** The user can look for merchandise on the website, for the artists they like, for purchase. 
+
+* **UC-4:**
+  * **Actors:** User
+  * **Preconditions:** user has logged onto the website 
+  * **Postconditions:** the user can view the information
+  * **Description:** The user can do searches based on their preferred artists or genre. 
+
+* **UC-5:**
+  * **Actors:** User
+  * **Preconditions:**The user is logged into the website
+  * **Postconditions:** buying gift cards
+  * **Description:** The user can buy gift cards to use on the website. 
+
+* **UC-6:**
+  * **Actors:** User
+  * **Preconditions:** The user is logged into the website
+  * **Postconditions:** creating wishlists
+  * **Description:** The user can add multiple items they would like to purchase and they can keep looking at other items while those items are on their list.
 
 ## User Stories
 
-In this section, you should list user stories for the project. User stories are a short description of how a user will be interacting with the system. Each group member must supply at least two user stories. Each user story should be written in the following format:
+* **US-1:** 
+  * **Type of user:** Customer 
+  * **Description:** As a person that enjoys music, I want to browse the website and be able to look at different types of albums and artists that the website provides. 
 
-* **ID:** A unique identifier for the user story. This should be a number that is unique across the entire document (something like US-1, US-2, etc. but be sure to replace the word `ID` with the unique identifier).
-  * **Type of User:** The type of user that the user story is for. This should be a single word that describes the type of user. For example, a user story for a customer might be `Customer` and a user story for an administrator might be `Admin`.
-  * **Description:** A description of the user story that gives a narrative from that user's perspective. This can be any length, but it must paint the picture of what the user wants to do, how they intend to do it, why they want to, and what they expect to happen.
+* **US-2:** 
+  * **Type of user:** Customer
+  * **Description:**As a music lover, I want to be able to add multiple albums to my list and purchase them in any time I would like. 
 
-US1
+* **US-3:** 
+  * **Type of user:** Customer
+  * **Description:**I want the website to provide me with recommendations because sometimes I want to find new music and I don’t know where to look so I want recommendations when I purchase my music. 
+
+* **US-4:** 
+  * **Type of user:** Customer 
+  * **Description:** If I am a fan of a certain artist, I want to look and be able to find merchandise for that artist. 
+
+* **US-5:** 
+  * **Type of user:** Customer
+  * **Description:** I want to be able to buy gift cards for this website for my other friends that enjoy music. 
+
+* **US-6:** 
+  * **Type of user:** Admin
+  * **Description:** I want to be able to create a website that any music lover can find what they need, and I want to be able to recommend them with music that is close to their taste. I also want to give them the option to find merchandise on the artists that they love. 
+
+US-7
   Customer
   Description: Customer wants to buy the new A boogie album that just dropped. He goes on to the website and while about to buy the album he thens sees A boogie merch. He buys both merch and album.
 
-US2 
+US-8 
   Customer
   Description: Customer buys a Taylor Swift album. The recommended function tells her about adele and she buys a album from her as well.
 
@@ -113,5 +159,11 @@ US2
 
 In this section, you should list any terms that are used in the document that may not be immediately obvious to a naive reader. Each group member must supply at least one term. Each term should be written in the following format:
 
-* **Term:** The term that is being defined. This should be a single word or phrase that is being defined.
-  * **Definition:** A definition of the term. This should be a short description of the term that is being defined. This should be a single sentence that describes the term.
+* **Term:** album
+  * **Definition:** a collection of songs/tracks on a medium
+
+  * **Term:** audio file
+  * **Definition:** file that contains audio 
+
+  * **Term:** merchandise
+  * **Definition:** anything the artist would be selling. Doesn't have to be music exacltly.
