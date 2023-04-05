@@ -7,7 +7,7 @@ Fill the document out following the guidelines listed in each section. Maintain 
 ## Group Members
 
 * [Mekhi Washington](emailto:mwashi35@uncc.edu)
-* [Name](mmailto:email@uncc.edu)
+* [Adrian Dominguez-Hernandez](emailto:adoming8@uncc.edu)
 * [Name](mmailto:email@uncc.edu)
 * [Name](mmailto:email@uncc.edu)
 
@@ -30,7 +30,7 @@ When a change is made to the document, a new revision should be created. The rev
 
 ## Introduction
 
-In this section, you should give a brief overview of what your project will be. Describe the software system you are building and what problems it solves. You should also give a short description of the stakeholders (users of the system) and what their needs are. There is no set formatting requirement, but you should maintain a consistent structure across future sections. Not all members must contribute to this section.
+Our project is going to be an online music store. Our software will display music albums the user can buy and when they click/purchase on the album the software will display popular artists from that category and merch they might want to buy. They will be hardcoded. 
 
 
 
@@ -38,18 +38,18 @@ In this section, you should give a brief overview of what your project will be. 
 
 Each group member must supply at least three functional requirements for the project. Each requirement should be written in the following format:
 
-* **ID:** A unique identifier for the requirement. This should be a number that is unique across the entire document (something like REQ-1, REQ-2, etc. but be sure to replace the word `ID` with the unique identifier).
-  * **Description:** A short description of the requirement. This should be a single sentence that describes the requirement. Do not replace the word `Description` with the actual description. Put the description in the space where these instructions are written. Maintain that practice for all future sections.
-  * **Type:** The type of requirement. Should be either `Functional` or `Non-Functional`.
-  * **Priority:** The priority of the requirement. This should be a number between 1 and 5, with 1 being the highest priority and 5 being the lowest priority.
-  * **Rationale:** A short description of why the requirement is important. This should be a single sentence that describes why the requirement is important.
-  * **Testing:** A short description of how the requirement can be tested. This should be a single sentence that describes how the requirement can be tested.
-* **ID:** A unique identifier for the requirement. This should be a number that is unique across the entire document (something like REQ-1, REQ-2, etc. but be sure to replace the word `ID` with the unique identifier).
-  * **Description:** A short description of the requirement. This should be a single sentence that describes the requirement.
-  * **Type:** The type of requirement. Should be either `Functional` or `Non-Functional`.
-  * **Priority:** The priority of the requirement. This should be a number between 1 and 5, with 1 being the highest priority and 5 being the lowest priority.
-  * **Rationale:** A short description of why the requirement is important. This should be a single sentence that describes why the requirement is important.
-  * **Testing:** A short description of how the requirement can be tested. This should be a single sentence that describes how the requirement can be tested.
+* **ID:**Database1.
+  * **Description:** Hardcode the database 
+  * **Type:** Functional
+  * **Priority:** 1
+  * **Rationale:** it is important because the code will not properly funciton and the main function of the store wouldn't run
+  * **Testing:** There isn't much testing in the database 
+* **ID:**Main1
+  * **Description:** The main file will have all the methods used to grab the genres, artists, merch, and prices.
+  * **Type:** Functional
+  * **Priority:** 1
+  * **Rationale:** Without this file we will just have a database with no use. this file will put those values to use
+  * **Testing:** making sure the main file is pulling the right values from the database. And displays them right.
 
   Function 1 
     Description- Being able to buy and sell music
@@ -77,7 +77,7 @@ Each group member must supply at least three functional requirements for the pro
 
 ## Constraints
 
-In this section, you should list any constraints that you have for the project. Each group member must supply at least two constraints. These can be constraints on the project itself, the software system, or the stakeholders. Constraints can be anything that limits the scope of the project. For example, that this project's template code is written using Flask and Python constitutes a constraint on the backend of the project. Constraints can also be things like the required timeline of the project. Be creative.
+We can only commit/make changes to a file if everyone is in 100% agreeance. Espicially the main file.
 
   -Having 5 weeks to have this project done.
   -Not enough funding
@@ -113,5 +113,11 @@ US2
 
 In this section, you should list any terms that are used in the document that may not be immediately obvious to a naive reader. Each group member must supply at least one term. Each term should be written in the following format:
 
-* **Term:** The term that is being defined. This should be a single word or phrase that is being defined.
-  * **Definition:** A definition of the term. This should be a short description of the term that is being defined. This should be a single sentence that describes the term.
+* **Term:** album
+  * **Definition:** a collection of songs/tracks on a medium
+
+  * **Term:** audio file
+  * **Definition:** file that contains audio 
+
+  * **Term:** merchandise
+  * **Definition:** anything the artist would be selling. Doesn't have to be music exacltly.
