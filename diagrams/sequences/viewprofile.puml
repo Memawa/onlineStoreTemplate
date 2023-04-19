@@ -1,0 +1,18 @@
+@startuml viewprofile
+actor customer
+boundary "System" as system
+control "Sessions" as sessions
+control "Core" as core 
+customer -> system: View_profile
+activate system 
+system -> core: View_profile_pipeline(username, email, first_name, last_name)
+activate core 
+core --> system: True
+deactivate core 
+system -> sessions: add_new_session(username, db)
+activate sessions
+sessions --> system: None 
+deactivate sessions
+system -> system: redirect to home page
+deactivate system
+@enduml

@@ -1,0 +1,18 @@
+@startuml logout 
+actor customer 
+boundary "System" as system
+control "Sessions" as sessions 
+control "Core" as core 
+customer -> system: logout
+activate system
+system -> core: logout_pipeline(username)
+activate core 
+core --> system: True 
+deactivate core 
+system -> sessions: add_new_sessions(username, db)
+activate sessions
+sessions -> system: None
+deactivate sessions 
+system -> system: redirect to login page
+deactivate system
+@enduml
