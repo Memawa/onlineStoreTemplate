@@ -1,0 +1,16 @@
+@startuml sellitems
+actor customer
+boundary "System" as system
+control "Sessions" as sessions
+control "Core" as core 
+customer -> system: Sell_items
+activate core 
+core --> system: True 
+deactivate core 
+system -> sessions: add_new_session(username, db)
+activate sessions
+sessions --> system: None 
+deactivate sessions
+system -> system: redirect to home page
+deactivate system
+@enduml

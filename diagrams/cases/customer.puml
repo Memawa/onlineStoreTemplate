@@ -1,0 +1,26 @@
+@startuml customer
+left to right direction
+actor customer
+rectangle "System" as system {
+    (login)
+    (view items)
+    (view cart)
+    (view orders)
+    (view profile)
+    (purchase item)
+    (sell item)
+    (put item in cart)
+}
+
+Customer --> (Login)
+Customer --> (Register)
+Customer --> (put item in cart)
+Customer --> (View Cart)
+Customer --> (View Items)
+Customer --> (View Orders)
+Customer --> (sell items)
+Customer --> (purchase items)
+Customer --> (View Profile)
+Customer --> (Logout)
+
+

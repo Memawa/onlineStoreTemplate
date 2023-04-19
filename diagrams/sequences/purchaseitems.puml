@@ -1,0 +1,18 @@
+@startuml purchaseitems
+actor customer
+boundary "System" as system
+control "Sessions" as sessions
+control "Core" as core 
+customer -> system: Purchase_items
+activate system
+system -> core: Purchase_items(item_id, cost, quantity)
+activate core 
+core --> system: True
+deactivate core 
+system -> sessions: add_new_session(db)
+activate sessions
+sessions --> system: None
+deactivate sessions
+system -> system: redirect to cart 
+deactivate system
+@enduml

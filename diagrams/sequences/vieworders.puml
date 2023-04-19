@@ -1,0 +1,18 @@
+@startuml view_orders
+actor customer
+boundary "System" as system
+control "Sessions" as sessions
+control "Core" as core
+customer -> system: View_orders
+activate system 
+system -> core: View_orders_pipeline(item_id, quantity, cost)
+activate core 
+core --> system: True 
+deactivate core 
+system -> sessions: add_new_session(username, db)
+activate sessions
+sessions --> None
+deactivate sessions
+system -> system: redirect to home page 
+deactivate system 
+@enduml
