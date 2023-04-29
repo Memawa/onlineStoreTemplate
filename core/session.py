@@ -3,6 +3,7 @@ from datetime import datetime
 from database.db import Database
 
 
+
 class UserSession:
     """
     UserSession is a class that represents a user's shopping session.
@@ -177,3 +178,14 @@ class Sessions:
             - A dictionary of user sessions.
         """
         return self.sessions
+    
+    def make_recommendation(self) -> Database:
+        """
+        Uses information from the user and makes a recommendation 
+        based on the user's picks
+        args:
+        returns:
+        """
+        return None
+
+        

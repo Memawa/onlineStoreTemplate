@@ -1,0 +1,18 @@
+@startuml view_cart 
+actor customer
+boundary "System" as system
+control "Sessions" as sessions
+control "Core" as core
+customer -> system: View_cart
+activate system
+system -> core: View_cart_pipeline(item_id, quantity, cost)
+activate core
+core --> system: True
+deactivate core 
+system -> sessons: add_new_session(username, db)
+activate sessions 
+sessions --> system: None
+deactivate sessions 
+system -> system: redirect to home page 
+deactivate system
+@enduml
