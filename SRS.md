@@ -85,13 +85,41 @@ We can only commit/make changes to a file if everyone is in 100% agreeance. Espi
 
 ## Use Cases
 
-In this section, you should list use cases for the project. Use cases are a thorough description of how the system will be used. Each group member must supply at least two use cases. Each use case should be written in the following format:
 
-* **ID:** A unique identifier for the use case. This should be a number that is unique across the entire document (something like UC-1, UC-2, etc. but be sure to replace the word `ID` with the unique identifier).
-  * **Description:** A description of the use case that gives the user a high-level overview of how the system is interacted with.
-  * **Actors:** A list of the actors that are involved in the use case. Only include the actors that are directly involved. Actors are the people or things that interact with the system. For example, when ordering at a fast food restaurant, one might have the following actors: the customer, the cashier, and the cook. But only the customer and the cashier are directly involved in the use case of ordering food. The cook is not directly involved in the use case of ordering food.
-  * **Preconditions:** A list of the preconditions for the use case. This should be a list of the preconditions for the use case, which are the conditions that must be met before the use case can be executed. Continuing with the restaurant example, the customer must have money in their wallet and the cashier must be logged in to the system before the use case of ordering food can be executed.
-  * **Postconditions:** A list of the postconditions for the use case. This should be a list of the postconditions for the use case, which are the conditions that must be met after the use case has been executed. Continuing with the restaurant example, the customer must have their food and the cashier must have the customer's money after the use case of ordering food has been executed.
+  * **UC-1:**
+  * **Actors:** User
+  * **Preconditions:** User has logged onto the the system. 
+  * **Postconditions:** purchasing albums 
+  * **Description:** Users can browse the website and purchase individual albums.
+  
+* **UC-2:**
+* **Actors:** User
+  * **Preconditions:** The user has selected an album.
+  * **Postconditions:** The user gets recommendations based on their selection. 
+  * **Description:** The system recommends albums similar to the one the user picked based on the artist or the genre. 
+
+* **UC-3:** 
+  * **Actors:** User
+  * **Preconditions:** the user has logged into the system. 
+  * **Description:** The user can look for merchandise on the website, for the artists they like, for purchase. 
+
+* **UC-4:**
+  * **Actors:** User
+  * **Preconditions:** user has logged onto the website 
+  * **Postconditions:** the user can view the information
+  * **Description:** The user can do searches based on their preferred artists or genre. 
+
+* **UC-5:**
+  * **Actors:** User
+  * **Preconditions:**The user is logged into the website
+  * **Postconditions:** buying gift cards
+  * **Description:** The user can buy gift cards to use on the website. 
+
+* **UC-6:**
+  * **Actors:** User
+  * **Preconditions:** The user is logged into the website
+  * **Postconditions:** creating wishlists
+  * **Description:** The user can add multiple items they would like to purchase and they can keep looking at other items while those items are on their list.
 
 ## User Stories
 
@@ -119,7 +147,7 @@ In this section, you should list use cases for the project. Use cases are a thor
   * **Type of user:** Admin
   * **Description:** I want to be able to create a website that any music lover can find what they need, and I want to be able to recommend them with music that is close to their taste. I also want to give them the option to find merchandise on the artists that they love. 
 
-US1
+US-7
   Customer
   Description: Customer wants to buy the new A boogie album that just dropped. He goes on to the website and while about to buy the album he thens sees A boogie merch. He buys both merch and album.
 

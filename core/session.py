@@ -1,6 +1,7 @@
 from core.utils import calculate_total_cost
 from datetime import datetime
 from database.db import Database
+import pandas as pd
 
 
 
@@ -180,12 +181,15 @@ class Sessions:
         return self.sessions
     
     def make_recommendation(self) -> Database:
+
+        album_data = pd.read_sql('startingData.sql')
         """
         Uses information from the user and makes a recommendation 
         based on the user's picks
         args:
         returns:
         """
+
         return None
 
         
