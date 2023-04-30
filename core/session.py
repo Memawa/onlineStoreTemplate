@@ -179,17 +179,27 @@ class Sessions:
             - A dictionary of user sessions.
         """
         return self.sessions
+    # Load the data from the startingData 
+    album_data = pd.read_sql('startingData.sql')
     
-    def make_recommendation(self) -> Database:
+    #Defining a function that gets album recommendations
+    def get_recommendation(album_name, album_data=album_data):
 
-        album_data = pd.read_sql('startingData.sql')
+        # get the genre of the selected album
+        album_genre = album_data[album_data['info'] == album_name]['category'].iloc[0]
+
+        #get the albums that are in the same genre 
+        same_genre_albums = album_data[album_data['category'] == album_genre]['info']
+
+        #get 3 albums from the same_genre_albums
+        recommended_albums = same_genre_albums[same_genre_albums != album_name][:3]
+        
         """
         Uses information from the user and makes a recommendation 
         based on the user's picks
-        args:
-        returns:
+        args: startingData.sql file 
+        returns: a list of data from the database
         """
 
-        return None
-
+        return recommended_albums.tolist()
         
