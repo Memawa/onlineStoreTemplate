@@ -1,13 +1,13 @@
 {% extends "layout.html" %}
 
 {% block content %}
-
+<!--This is the product page to buy thing-->
 <div class="row" id="products_page">
     <div class="col-md-12">
         <h3>Products</h3>
         <hr>
         <div class="row">
-            <form action="/checkout" method="post">
+            <form action="/personalCart" method="post">
                 <div class="form-group">
                     <div class="row">
                         {% for product in products %}
@@ -28,7 +28,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12" id="index_buttons">
-                        <button type="submit" class="btn btn-primary" id="checkout_button">Order</button>
+                        <button type="submit" class="btn btn-primary" id="checkout_button">Go to cart</button>
                     </div>
                 </div>
             </form>

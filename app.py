@@ -15,6 +15,7 @@ sessions = Sessions()
 sessions.add_new_session(username, db)
 
 
+
 @app.route('/')
 def index_page():
     """
@@ -82,6 +83,24 @@ def register_page():
     return render_template('register.html')
 
 
+@app.route('/checkout')
+def checkout():
+    """
+    Renders the index page when the user is at the `/` endpoint, passing along default flask variables.
+
+    args:
+        - None
+
+    returns:
+        - None
+    """
+    
+    return render_template('checkout.html')
+
+
+
+
+
 @app.route('/register', methods=['POST'])
 def register():
     """
@@ -108,8 +127,8 @@ def register():
     return render_template('index.html')
 
 
-@app.route('/checkout', methods=['POST'])
-def checkout():
+@app.route('/personalCart', methods=['POST'])
+def personalCart():
     """
     Renders the checkout page when the user is at the `/checkout` endpoint with a POST request.
 
@@ -128,14 +147,19 @@ def checkout():
         print(f"item ID: {item['id']}")
         if request.form[str(item['id'])] > '0':
             count = request.form[str(item['id'])]
-            order[item['item_name']] = count
+            order[item['item_name']] = {'quantity': count, 'image_url': item['image_url'], 'price': item['price']}
             user_session.add_new_item(
                 item['id'], item['item_name'], item['price'], count)
 
     user_session.submit_cart()
 
-    return render_template('checkout.html', order=order, sessions=sessions, total_cost=user_session.total_cost)
+    return render_template('personalCart.html', order=order, sessions=sessions, total_cost=round(user_session.total_cost, 2))
 
+@app.route('/about')
+def about_page():
+    
+    
+    return render_template('about.html')
 
 if __name__ == '__main__':
     app.run(debug=True, host=HOST, port=PORT)
