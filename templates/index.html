@@ -1,5 +1,6 @@
 {% extends "layout.html" %}
-
+<!-- this is the first page that loads it is the page you can get info on and you can't order on this page.  -->
+<!-- also has a href element that opens the about page and uses category for app.py method for categories -->
 {% block content %}
 <div class="row">
     <div class="col-md-12" id="index_buttons">
@@ -20,7 +21,7 @@
                         <div class="col-md-4">
                             <div id={{product.id}}>
                                 <div class="product_card" id="product_card">
-                                    <a href="/about">
+                                    <a href="{{ url_for('about_page', category=product['category']) }}">
                                     <img src="{{ product.image_url }}" class="product_card-img" alt="...">
                                     </a>
                                     <div class="product_card-body">
