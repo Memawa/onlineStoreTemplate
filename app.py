@@ -66,7 +66,7 @@ def login():
         return render_template('home.html', products=products, sessions=sessions)
     else:
         print(f"Incorrect username ({username}) or password ({password}).")
-        return render_template('index.html')
+        return render_template('index.html', products=products )
 
 
 @app.route('/register')
@@ -99,7 +99,7 @@ def checkout():
 
 
 
-
+# This only works if the text boxes inputs are long enough
 
 @app.route('/register', methods=['POST'])
 def register():
@@ -124,7 +124,7 @@ def register():
     salt, key = hash_password(password)
     update_passwords(username, key, salt)
     db.insert_user(username, key, email, first_name, last_name)
-    return render_template('index.html')
+    return render_template('home.html', products=products, username=username)
 
 
 @app.route('/personalCart', methods=['POST'])
@@ -153,11 +153,10 @@ def personalCart():
 
     user_session.submit_cart()
 
-    return render_template('personalCart.html', order=order, sessions=sessions, total_cost=round(user_session.total_cost, 2))
+    return render_template('personalCart.html', order=order, sessions=sessions, total_cost=round(user_session.total_cost*1.0725, 2))
 
 @app.route('/about')
 def about_page():
-    
     
     return render_template('about.html')
 
