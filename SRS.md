@@ -7,8 +7,8 @@ Fill the document out following the guidelines listed in each section. Maintain 
 ## Group Members
 
 * [Mekhi Washington](emailto:mwashi35@uncc.edu)
-* [Adrian Dominguez-Hernandez](emailto:adoming8@uncc.edu)
-* [Derin Tekin](mmailto:dtekin1@uncc.edu)
+* [Name](mmailto:email@uncc.edu)
+* [Name](mmailto:email@uncc.edu)
 * [Name](mmailto:email@uncc.edu)
 
 ## Revisions

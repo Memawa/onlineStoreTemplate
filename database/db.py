@@ -324,19 +324,19 @@ class Database:
             "SELECT first_name FROM users WHERE username = ?", (username,))
         return self.cursor.fetchone()
 
-    def get_last_name_by_username(self, username: str):
-        """
-        Gets the last name of a user from the database.
+    # def get_last_name_by_username(self, username: str):
+    #     """
+    #     Gets the last name of a user from the database.
 
-        args:
-            - username: The username of the user whose last name to get.
+    #     args:
+    #         - username: The username of the user whose last name to get.   Not using last names as of today 4/13/2023 
 
-        returns:
-            - The last name for the user with the given username.
-        """
-        self.cursor.execute(
-            "SELECT last_name FROM users WHERE username = ?", (username,))
-        return self.cursor.fetchone()
+    #     returns:
+    #         - The last name for the user with the given username.
+    #     """
+    #     self.cursor.execute(
+    #         "SELECT last_name FROM users WHERE username = ?", (username,))
+    #     return self.cursor.fetchone()
 
     # ------ Setter methods ------
 
@@ -385,26 +385,26 @@ class Database:
             "UPDATE users SET first_name = ? WHERE username = ?", (new_first_name, username))
         self.connection.commit()
 
-    def set_last_name(self, username: str, new_last_name: str):
-        """
-        Updates the last name of a user in the database.
+    # def set_last_name(self, username: str, new_last_name: str):
+    #     """
+    #     Updates the last name of a user in the database.
 
-        args:
-            - username: The username of the user to update.
-            - new_last_name: The new last name of the user.
+    #     args:                                                         
+    #         - username: The username of the user to update.       Not using last names as of today 4/13/2023 
+    #         - new_last_name: The new last name of the user.
 
-        returns:
-            - None
-        """
-        self.cursor.execute(
-            "UPDATE users SET last_name = ? WHERE username = ?", (new_last_name, username))
-        self.connection.commit()
+    #     returns:
+    #         - None
+    #     """
+    #     self.cursor.execute(
+    #         "UPDATE users SET last_name = ? WHERE username = ?", (new_last_name, username))
+    #     self.connection.commit()
 
     # --------------------------------------------
     # ------------------ Sales -------------------
     # --------------------------------------------
 
-    def insert_new_sale(self, transaction_id: int, username: str, item_id: int, quantity: int, sale_date: dt.date, cost: float):
+    def insert_new_sale(self, transaction_id: int, username: str, item_id: int, quantity: int, cost: float):
         """
         Inserts a new sale into the database.
 
@@ -412,8 +412,7 @@ class Database:
             - transaction_id: The transaction id of the sale.
             - username: The username of the sale.
             - item_id: The item id of the sale.
-            - quantity: The quantity of the sale.
-            - sale_date: The sale date of the sale.
+            - quantity: The quantity of the sale.                      
             - cost: The cost of the sale.
 
         returns:
@@ -421,7 +420,7 @@ class Database:
         """
         self.cursor.execute(
             "INSERT INTO sales (transaction_id, username, item_id, quantity, sale_date, cost) VALUES (?, ?, ?, ?, ?, ?)",
-            (transaction_id, username, item_id, quantity, sale_date, cost))
+            (transaction_id, username, item_id, quantity, cost))
         self.connection.commit()
 
     # ------ Getter methods ------
@@ -495,19 +494,19 @@ class Database:
             "SELECT quantity FROM sales WHERE sale_id = ?", (sale_id,))
         return self.cursor.fetchone()
 
-    def get_sale_date_by_sale_id(self, sale_id: int):
-        """
-        Gets the sale date for a sale from the database.
+    # def get_sale_date_by_sale_id(self, sale_id: int):
+    #     """
+    #     Gets the sale date for a sale from the database.
 
-        args:
-            - sale_id: The id of the sale whose sale date to get.
+    #     args:
+    #         - sale_id: The id of the sale whose sale date to get.  WE PROBABLY DON'T HAVE TO GET THE SALE DATE SEEMS UNNECESARY
 
-        returns:
-            - The sale date for the sale with the given id.
-        """
-        self.cursor.execute(
-            "SELECT sale_date FROM sales WHERE sale_id = ?", (sale_id,))
-        return self.cursor.fetchone()
+    #     returns:
+    #         - The sale date for the sale with the given id.
+    #     """
+    #     self.cursor.execute(
+    #         "SELECT sale_date FROM sales WHERE sale_id = ?", (sale_id,))
+    #     return self.cursor.fetchone()
 
     def get_cost_by_sale_id(self, sale_id: int):
         """
@@ -579,20 +578,20 @@ class Database:
             "SELECT * FROM sales WHERE item_id = ?", (item_id,))
         return self.cursor.fetchall()
 
-    def get_sales_by_date_range(self, start_date: dt.date, end_date: dt.date):
-        """
-        Gets the sales for a date range from the database.
+    # def get_sales_by_date_range(self, start_date: dt.date, end_date: dt.date):
+    #     """
+    #     Gets the sales for a date range from the database.
 
-        args:
-            - start_date: The start date of the date range.
-            - end_date: The end date of the date range.
+    #     args:
+    #         - start_date: The start date of the date range.
+    #         - end_date: The end date of the date range.   NOT USING SALES DATES AS OF 4/13/2023
 
-        returns:
-            - The sales for the given date range.
-        """
-        self.cursor.execute(
-            "SELECT * FROM sales WHERE sale_date BETWEEN ? AND ?", (start_date, end_date))
-        return self.cursor.fetchall()
+    #     returns:
+    #         - The sales for the given date range.
+    #     """
+    #     self.cursor.execute(
+    #         "SELECT * FROM sales WHERE sale_date BETWEEN ? AND ?", (start_date, end_date))
+    #     return self.cursor.fetchall()
 
     def get_sales_by_quantity_range(self, start_quantity: int, end_quantity: int):
         """
@@ -671,20 +670,20 @@ class Database:
             "UPDATE sales SET item_id = ? WHERE id = ?", (new_item_id, sale_id))
         self.connection.commit()
 
-    def set_sale_date(self, sale_id: int, new_sale_date: dt.date):
-        """
-        Updates the sale date of a sale in the database.
+    # def set_sale_date(self, sale_id: int, new_sale_date: dt.date):
+    #     """
+    #     Updates the sale date of a sale in the database.
 
-        args:
-            - sale_id: The id of the sale to update.
-            - new_sale_date: The new sale date of the sale.
+    #     args:
+    #         - sale_id: The id of the sale to update.
+    #         - new_sale_date: The new sale date of the sale.  WE AREN'T USING SALE DATE AS OF 04/13/2023
 
-        returns:
-            - None
-        """
-        self.cursor.execute(
-            "UPDATE sales SET sale_date = ? WHERE id = ?", (new_sale_date, sale_id))
-        self.connection.commit()
+    #     returns:
+    #         - None
+    #     """
+    #     self.cursor.execute(
+    #         "UPDATE sales SET sale_date = ? WHERE id = ?", (new_sale_date, sale_id))
+    #     self.connection.commit()
 
     def set_sale_quantity(self, sale_id: int, new_quantity: int):
         """

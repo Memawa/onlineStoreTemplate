@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="row" id="products_page">
+    <div class="col-md-12">
+        <h3>Your Order</h3>
+        <hr>
+        <div class="row">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Item</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Price</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item_name, item_info in order.items() %}
+                    <tr>
+                        <td>
+                            <img src="{{ item_info.image_url }}" alt="{{ item_name }} image" width="50">
+                            {{ item_name }}
+                        </td>
+                        <td>{{item_info.quantity}}</td>
+                        <td>{{item_info.price}}</td>
+                        
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        <td colspan="3" align="right">Total:</td>
+                        <td>${{ total_cost }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- I switched the checkout page to personalcart so when you hit enter in home after selecting albums it brings you here -->
+{% endblock %}
