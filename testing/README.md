@@ -26,3 +26,9 @@ This script contains the unittests for the `database` module. The tests here are
 ## coreTests.py File
 
 This script contains the unittests for the `core` module. Similar to the `authTests.py` file, the tests here are limited in scope. Functions from the `session.py` are tested, specfically ones that handle session management. More thorough testing for specific user sessions, multiple users, and any functions from the `utils.py` file would be a beneficial addition from students.
+
+
+
+## Adrian/Documented tests /Personal Cart/ About 
+
+I wrote test scripts for the personal cart method and the about method and it seems to work. Unfortunately I couldn't seem to pull from the original database file so instead I made a mock database and implemented the core functions used in the about and personal cart method to pull data from the mock database making sure that the core functions run as intended. Both functions seem to work as intended becasue I made a very unbiased review of my own tests. 
