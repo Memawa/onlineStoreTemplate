@@ -3,11 +3,17 @@
 {% block content %}
 
 
-<div class="row" id="products_page">
-    <div class="col-md-12">
-        <h3>About</h3>
+        <h3>More music you might like...</h3>
         <hr>
-        <div class="row">
-        </div>
-    </div>
-    {% endblock %}
+        
+            {% for item_name, item_data in collection.items() %}
+                <div class="column">
+                    <img src="{{ item_data['image_url'] }}" alt="{{ item_name }}" class="product_card-img ">
+                    <h4>{{ item_name }}</h4>
+                </div>
+            {% endfor %}
+        
+    
+
+
+{% endblock %}

@@ -141,24 +141,67 @@ def personalCart():
     modifies:
         - sessions: adds items to the user's cart
     """
+
+    #creates a dictionary called order
     order = {}
+
+    #gets session
     user_session = sessions.get_session(username)
+
+    #runs a for loop in the products database
     for item in products:
-        print(f"item ID: {item['id']}")
+
+        #this just prints all of the items in products in the terminal
+        #print(f"item ID: {item['id']}")
+
+        #this checks if the user put a value higher than one in the number box
         if request.form[str(item['id'])] > '0':
+
+            #this gets the amount the user wants and stores it in count
             count = request.form[str(item['id'])]
+
+            #this adds the items to the order dictionary along with the image, price and quantity
             order[item['item_name']] = {'quantity': count, 'image_url': item['image_url'], 'price': item['price']}
+
+            #this adds it to the cart in the session
             user_session.add_new_item(
                 item['id'], item['item_name'], item['price'], count)
-
+            
+    #this sends it to their cart and is part of the process of pulling up the personal cart html
     user_session.submit_cart()
 
+
+    #loads the personal cart.html with all of the info
     return render_template('personalCart.html', order=order, sessions=sessions, total_cost=round(user_session.total_cost*1.0725, 2))
 
 @app.route('/about')
 def about_page():
     
-    return render_template('about.html')
+
+    # creates a dictionary called collection
+    collection = {}
+
+    #gets session still not sure why we need it but other methods had it so we ball
+    user_session = sessions.get_session(username)
+
+    #grabs the category parameter of the image you clicked 
+    firstcat = request.args.get('category')
+
+    #checks if firstcat has a value
+    if firstcat:
+
+        #this runs through the database(products) and checks every album's category to see if it matches with the firstcat
+        wanted_products = [p for p in products if p['category'] == firstcat]
+
+        #this goes through the wantedproducts and adds its name and image to collecton the 1 adds the product with a quantity of 1
+        for music in wanted_products:
+            collection[music['item_name']] = {'image_url': music['image_url']}
+            user_session.add_new_item(music['id'], music['item_name'], music['price'], 1)
+
+    #this renders eveything and passes collection        
+    return render_template('about.html', collection=collection)
+
+    
 
 if __name__ == '__main__':
     app.run(debug=True, host=HOST, port=PORT)

@@ -1,8 +1,12 @@
+
+/* Styled a lot of buttons and features to make pages more unique and easy on the eyes */
+
+/* this is the table row color in personalcartpage */
 tr{
     color:white;
 }
 
-
+/* input button styling */
 input{
     background-color: #9695a0;
     color:#000000;
@@ -13,11 +17,13 @@ input::placeholder {
     color: black;
   }
 
+/* this styles pretty much the background for all pages since it inherits the layout.html */
 body{
     background-color: black;
     color: white;
 }
 
+/* more button styling */
 #index_buttons {
     padding-top: 15px;
     margin: 0 auto;
@@ -35,6 +41,7 @@ body{
     margin-bottom: 10px;
 }
 
+/* styles the register page */
 #info_row {
     padding-top: 15px;
     margin: 0 auto;
@@ -70,20 +77,25 @@ body{
     
 }
 
+/* this just adds a box shadow when hovering over card */
 #product_card:hover {
     box-shadow: 2px 2px 10px white;
 }
 
-
+/* img height and width also helps with hover animation */
 .product_card-img {
     width: 302px;
     height: 302px;
     transition: transform .5s ease;
 }
 
+
+/* animation when hovering over img */
 .product_card-img:hover {
     transform:scale(1.2);
 }
+
+/* defualt product card styling */
 
 .product_card-title {
     /* Centered */
@@ -113,6 +125,8 @@ body{
     font-style: italic;
 }
 
+
+/* don't think we endded up using this */
 #add_to_cart_button {
     background-color: #49f4d8;
     border-color: #ccc;
@@ -124,7 +138,7 @@ body{
     text-align: center;
 }
 
-
+/* also don't think we ended up using this */
 #count_row {
     margin: 0 auto;
     margin-top: 10px;
@@ -136,6 +150,7 @@ body{
 
 }
 
+/* that one quantity element on each card on home page when selecting how many albums you want */
 .quanity {
     margin-left: 130px;
     margin-right: 130px;
@@ -143,6 +158,7 @@ body{
     font-size: 20px;
 }
 
+/* checkout button styling */
 #checkout_button {
     background: linear-gradient(to top, #9eb3ce 0%, black 100%);
     border-color: black;
@@ -155,3 +171,10 @@ body{
     text-align: center;
 
 }
+
+/* for the about page */
+.column {
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+  }
