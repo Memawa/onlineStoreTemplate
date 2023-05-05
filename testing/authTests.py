@@ -1,5 +1,8 @@
 from authentication.authTools import hash_password
-
+from authentication.authTools import username_exists
+from authentication.authTools import update_passwords
+from authentication.authTools import login_pipeline
+from authentication.authTools import check_password
 
 def test_hash_password_generates_salt():
     """
@@ -86,3 +89,52 @@ def test_hash_password_uses_given_salt():
         return False, error
     else:
         return True, "Hashes are different."
+
+def test_username_exist():
+
+    fake = username_exists("RonaldMcdonald")
+    if fake == True:
+        error =f"Error in test_username_exist {fake} is not there and show not show up"
+        return False, error
+    else: 
+        return True, "Username was not found (Was what it was looking for)"
+    
+def test_update_passwords():
+    
+   new_pass = update_passwords("lamron", "rand" , "saltron")
+   ccfile = open("authentication/passwords.txt", "r")
+   correct 
+   for aline in ccfile:
+     values = aline.split()
+     if values == new_pass:
+         correct = True
+         return True, "Code updated properly"
+     else:
+         error = "The password did not update" 
+         correct= False, error
+
+    
+   ccfile.close()
+
+def test_check_password():
+    wrong_pass = check_password("randomly", "fsdf", "dsadf")
+
+    test 
+    if wrong_pass == False:
+        test = True
+        return test, "Password did not match so it works"
+    else :
+        error = "The password should be wrong and its still shows up true "
+        return False , error
+
+def test_login_pipeline():
+    wrong_combo = login_pipeline("Ranran" , "paswirrd")
+    
+    works
+    if wrong_combo == False:
+        works = True
+        return works, "Shows up wrong as it should, Test complete"
+    else : 
+        works =False
+        error = "Comes up as true even though it should not"
+        return works, error
